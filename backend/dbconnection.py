@@ -8,7 +8,7 @@ class DbConnection:
 
        self.cursor = self.conn.cursor()
 
-    def registration(self,query,values):
+    def registration(self,query=None,values=None):
        self.cursor.execute(query,values)
        self.conn.commit()
 
@@ -16,6 +16,35 @@ class DbConnection:
         self.cursor.execute(query,values)
         self.a=self.cursor.fetchall()
         return self.a
+
+    def view(self,query):
+        self.cursor.execute(query)
+        records=self.cursor.fetchall()
+        return records
+    def search(self,query):
+        self.cursor.execute(query)
+        records=self.cursor.fetchall()
+        return records
+
+    def delete(self,query,values=None):
+        self.cursor.execute(query,values)
+        self.conn.commit()
+
+    def fetch1(self,query):
+        self.cursor.execute(query)
+        rows = self.cursor.fetchone()
+        return rows
+
+    def update(self,query,values):
+        self.cursor.execute(query,values)
+        self.conn.commit()
+
+    def select(self,query,values):
+        self.cursor.execute(query,values)
+        rows = self.cursor.fetchall()
+        return rows
+
+
 
 
 
