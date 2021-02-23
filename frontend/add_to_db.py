@@ -35,7 +35,7 @@ class Database:
          self.heading.place(x=210,y=0)
 
 
-         #lables  for the window
+#===========================================lables  for the window======================================================
          self.name_l=Label(master,text="Enter Product Name", \
                            bg='black', fg='lavender',relief="solid",font=('arial 18 bold'),)
          self.name_l.place(x=290,y=90)
@@ -49,7 +49,7 @@ class Database:
          self.cp_l.place(x=300, y=300)
 
 
-        #enteries for window
+#===============================================enteries for window=====================================================
 
          self.name_e=Entry(master,width=25,relief="solid",font=('arial 18 bold'))
          self.name_e.place(x=250,y=150)
@@ -60,7 +60,7 @@ class Database:
          self.cp_e = Entry(master, width=25,relief="solid", font=('arial 18 bold'))
          self.cp_e.place(x=250, y=350)
 
-         #button to add to the database
+#===================================button to add to the database=======================================================
          self.btn_add=Button(master,text='Add to Database',width=25,height=2, relief="solid",\
                              bg='orange',fg='white',command=self.get_items)
          self.btn_add.place(x=400,y=450)

@@ -20,7 +20,7 @@ class Login_System:
         self.heading = Label(root, text="Welcome to Login_Page", font=('arial 40 bold'), \
                              fg='lavender', bg='black', width=21)
         self.heading.place(x=0, y=0)
-
+#================================================Label login System===================================================================================================================================
 
         self.title=Label(self.root,text="Login",font=("time new roman","40","bold"))
         self.title.pack()

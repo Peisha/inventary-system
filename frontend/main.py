@@ -30,8 +30,7 @@ class Application():
         self.right = Frame(master, width=666, height=768, bg='light green')
         self.right.pack(side=RIGHT)
 
-
-        #components
+#==============================================components===============================================================
         self.heading=Label(self.left,text="NORIN_STORE", width=22,font=('arial 40 bold'), \
                            fg='black',bg='lavender', relief="solid")
         self.heading.place(x=0,y=0)
@@ -40,7 +39,7 @@ class Application():
                           bg='lavender',fg='black',relief="solid")
         self.date_l.place(x=0,y=0)
 
-        #table invoice=======================================================
+#===================================================table invoice=======================================================
         self.tproduct=Label(self.right,text="Number Of Products",font=('arial 18 bold'), \
                             bg='lavender',fg='black', relief="solid")
         self.tproduct.place(x=0,y=60)
@@ -53,7 +52,7 @@ class Application():
                              bg='lavender', fg='black', relief="solid")
         self.tamount.place(x=500, y=60)
 
-        #enter stuff
+#=============================================enter stuff===============================================================
         self.enterid=Label(self.left,text="Product's ID No.",font=('arial 18 bold'),\
                            fg='black',bg='lavender', relief="solid")
         self.enterid.place(x=0,y=80)
@@ -64,8 +63,7 @@ class Application():
         self.enteride.focus()
 
 
-
-        #button
+#===========================================button======================================================================
         self.search_btn=Button(self.left,text="Search",width=22,height=2,bg='green',relief="solid", command=self.ajax)
         self.search_btn.place(x=290,y=120)
         #fill it later by the fuction ajax
@@ -78,7 +76,7 @@ class Application():
                             bg='lavender', fg='black')
         self.pprice.place(x=0, y=290)
 
-        #total label
+#===============================================total label=============================================================
         self.total_l=Label(self.right,text="",font=('arial 40 bold'), relief="solid",\
                            bg='lavender',fg='black')
         self.total_l.place(x=0,y=600)
@@ -101,7 +99,7 @@ class Application():
           self.pprice.configure(text="Price:RS. "+str(self.get_price),fg='black',bg='lavender',relief="solid")
 
 
-        #craete the quantity and the discount label
+#==================================craete the quantity and the discount label===========================================
           self.quantityl=Label(self.left,text="Enter_Quantity",font=('arial 18 bold'),\
                                fg='black',bg='lavender',relief="solid")
           self.quantityl.place(x=0,y=370)
@@ -122,11 +120,11 @@ class Application():
           self.discount_e.insert(END,0)
 
 
-        #add to cart button
+#================================================add to cart button===================================================================================================================================
           self.add_to_cart_btn = Button(self.left, text="Add_To_Cart", width=22, height=2, bg='green',relief="solid",command=self.add_to_cart)
           self.add_to_cart_btn.place(x=270, y=450)
 
-        #genrate bill and change
+#==================================================genrate bill and change============================================================================================================================
           self.change_l=Label(self.left,text="Given Amount",font=('arial 18 bold'),fg='black',bg='lavender',relief="solid")
           self.change_l.place(x=0,y=550)
 
@@ -136,12 +134,12 @@ class Application():
           self.change_btn= Button(self.left, text="Calculate Change", width=22, height=2, bg='green',relief="solid",command=self.change_func)
           self.change_btn.place(x=270, y=590)
 
-        #geneerate bill button
+#==================================================geneerate bill button==============================================================================================================================
           self.bill_btn = Button(self.left, text="Generate Bill", width=100, height=2, bg='orange',fg='white',relief="solid",command=self.generate_bill)
           self.bill_btn.place(x=0, y=640)
         else:
              messagebox.showinfo("success", "Done everything smoothly")
-        #generate add and update buttom
+#==============================================generate add and update buttom=========================================================================================================================
         self.bill_btn = Button(self.left, text="Add The Product", width=20, height=2, bg='lavender', fg='black',relief="solid",command=self.add_product)
 
         self.bill_btn.place(x=100, y=700)
@@ -151,7 +149,7 @@ class Application():
 
 
 
-    def add_to_cart(self,*args,**kwargs):
+    def add_to_cart(self):
         self.quantity_value=int(self.quantity_e.get())
 
         if  self .quantity_value >int(self.get_stock):
@@ -182,7 +180,7 @@ class Application():
                 self.counter+=1
 
 
-                #total confugure
+#==================================================total confugure=======================================================
                 self.total_l.configure(text="Total : Rs. "+str(sum(product_price)),\
                                        bg='lavender',fg='black')
                 #delete
