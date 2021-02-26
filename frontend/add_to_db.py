@@ -73,7 +73,7 @@ class Database:
                                  bg='green', fg='white')
          self.btn_back.place(x=350, y=500)
 
-          #text box for the log
+#===========================================text box for the log========================================================
          self.tbBox = Text(master, width=60, height=18)
          self.tbBox.place(x=750, y=70)
          self.tbBox.insert(END, "ID has reached up to:" + str(id))
@@ -110,9 +110,9 @@ class Database:
         self.b = Tk()
         frontend.main.Application(self.b)
 
-#root=Tk()
-#obj=Database(root)
-#root.mainloop()
+# root=Tk()
+# obj=Database(root)
+# root.mainloop()
 
 
 

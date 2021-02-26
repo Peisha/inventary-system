@@ -78,7 +78,7 @@ class Database:
                                 bg='orange',relief="solid",command=self.search)
          self.btn_search.place(x=270,y=150)
 
-         #lables  for the window
+#=====================================lables  for the window============================================================
          self.name_l=Label(master,text="Enter Product Name",font=('arial 18 bold'),relief="solid")
          self.name_l.place(x=200,y=200)
 
@@ -89,7 +89,7 @@ class Database:
          self.cp_l.place(x=220, y=400)
 
 
-        #enteries for window
+#==========================================enteries for window==========================================================
 
          self.name_e=Entry(master,width=25,font=('arial 18 bold'),relief="solid")
          self.name_e.place(x=150,y=250)
@@ -119,7 +119,7 @@ class Database:
          combo_sort['values'] = ("id","name","price","stock")
          combo_sort.place(x=850, y=60)
 
-         #button to add to the database
+#=====================================button to add to the database=====================================================
          self.btn_add=Button(master,text='Update Database',width=25,height=2,\
                              bg='orange',relief="solid",fg='black',command=self.update)
          self.btn_add.place(x=220,y=500)
@@ -145,11 +145,11 @@ class Database:
 
 
 
-         #text box for the log
-         #self.tbBox=Text(master,width=70,height=40)
-         #self.tbBox.place(x=750,y=70)
-         #self.tbBox.insert(END,"ID has reached up to:"+str(id))
-
+         # text box for the log
+         # self.tbBox=Text(master,width=70,height=40)
+         # self.tbBox.place(x=750,y=70)
+         # self.tbBox.insert(END,"ID has reached up to:"+str(id))
+         #
 
 
     def search(self):
@@ -179,7 +179,7 @@ class Database:
 
           mycursor.execute("UPDATE  inventory SET name=%s,stock=%s,price=%s WHERE id=%s",[self.u1,self.u2,self.u3,self.id_leb.get()])
           conn.commit()
-          #tkinter.messagebox.showinfo("Success","Update successfully")
+          tkinter.messagebox.showinfo("Success","Update successfully")
 
     def back(self):
         self.master.destroy()
@@ -326,8 +326,8 @@ class Database:
                         if i == row[3]:
                             self.sales.insert('', END, value=row)
                             rows.remove(row)
-#root=Tk()
-#b=Database(root)
-#root.mainloop()
+# root=Tk()
+# b=Database(root)
+# root.mainloop()
 
 
