@@ -40,8 +40,19 @@ class Test_Database(unittest.TestCase):
         a = (self.db.view(query))
         b = self.c.sort_tuple(a)
         self.assertEqual(
-            [(5, 'dbdrqwcd', '255', '535'), (8, 'gghy', '567', '56'), (11, 'ggii', '567', '56'),
-             (12, 'ggtftc', '567', '56'), (10, 'ggyy', '567', '56')],b)
+            [(5, 'dbdrqwcd', '255', '535'),
+             (8, 'gghy', '567', '56'),
+             (11, 'ggii', '567', '56'),
+             (12, 'ggtftc', '567', '56'),
+             (10, 'ggyy', '567', '56'),
+             (14, 'noodle', '40', '34'),
+             (1, 'soap', '30', '46'),
+             (2, 'soup', '30', '46')] != [(5, 'dbdrqwcd', '255', '535'),
+                                          (8, 'gghy', '567', '56'),
+                                          (11, 'ggii', '567', '56'),
+                                          (12, 'ggtftc', '567', '56'),
+                                          (10, 'ggyy', '567', '56')],b)
+            
 
     def test_add(self):
         '''

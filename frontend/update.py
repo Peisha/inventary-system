@@ -59,8 +59,6 @@ class Database:
          self.sales.column("stock", width=150)
          self.sales.pack(fill=BOTH, expand=1)
 
-         # self.rb= Frame(self.right, bg="green", bd=2, relief=RAISED)
-         # self.rb.pack(side=BOTTOM)
 
 
          self.heading=Label(master,text="Update to the databse",font=('arial 40 bold'), relief="solid",\

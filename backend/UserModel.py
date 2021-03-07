@@ -30,11 +30,6 @@ class UserModel :
         return self.__stock
 
 
-
-
-
-
-
     def setf_name(self,f_name):
         self.__f_name=f_name
     def getf_name(self):
